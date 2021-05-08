@@ -30,7 +30,11 @@ export default {
                 { headers: {'Content-Type' : 'application/x-www-form-urlencoded' }
             }).then((content)=>{
                 console.log(content);
-                this.$root.role = content.data.msg.authorities.toString();
+                this.$root.role = '';
+                content.data.msg.authorities.forEach(element => {
+                    this.$root.role = element.authority + ',';
+                });
+                console.log(this.$root.role);
                 this.$message({message: '登录成功', type: 'success'});
                 this.$router.push('/home');
             }).catch((error) => {

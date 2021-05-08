@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import TextRequest from "../components/TextRequest.vue"
 
 export default {
@@ -29,6 +30,11 @@ export default {
         //stub
     },
     methods: {
+        upload() {
+            let data = new FormData();
+            data.append('')
+            axios.post('/api/', )
+        },
         submit() {
             //console.log(this.qdata[0].ans);
             //stub

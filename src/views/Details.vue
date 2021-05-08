@@ -28,12 +28,13 @@ export default {
   methods: {
     slipe() {
       var gid = this.$route.query.grpid;
-      axios.get('/api/getDirectionInfo', {
+      this.entry.id = gid;
+      axios.get('/api/user/getDirectionInfo', {
         params: {
           directionID: gid
         }
       }).then((content) => {
-        this.entry.desc = content;
+        this.entry.desc = content.data.msg;
       }).catch((error) => {
         this.$message({message: '无法获取详细：'+ error, type: 'error'});
       })
