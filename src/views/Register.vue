@@ -33,7 +33,7 @@ export default {
         upload() {
             let data = new FormData();
             data.append('')
-            axios.post('/api/', )
+            axios.post('/api/', data)
         },
         submit() {
             //console.log(this.qdata[0].ans);
