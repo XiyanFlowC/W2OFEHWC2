@@ -18,7 +18,7 @@ export default {
   methods: {
     gotoDetail(id) {
       this.$router.push({
-        path: "/intro/details",
+        path: "/details",
         query: {
           grpid: id,
         },

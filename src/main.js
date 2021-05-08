@@ -15,7 +15,7 @@ new Vue({
   data() {
     return {
       appname: '简历投递系统',
-      role: null,
+      role: 'guest',
     }
   }
 }).$mount('#app')

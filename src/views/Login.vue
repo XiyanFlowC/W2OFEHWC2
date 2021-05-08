@@ -17,22 +17,26 @@
 
 <script>
 import axios from 'axios'
+import qs from 'qs'
 
 export default {
     methods: {
         login: function() {
-            axios.post('/api/login', {
-                params: {
+            axios.post('/api/login',
+                qs.stringify({
                     username: this.accound,
                     password: this.passwd
-                }
-            }).then(()=>{
+                }),
+                { headers: {'Content-Type' : 'application/x-www-form-urlencoded' }
+            }).then((content)=>{
+                console.log(content);
+                this.$root.role = content.data.msg.authorities.toString();
                 this.$message({message: '登录成功', type: 'success'});
                 this.$router.push('/home');
             }).catch((error) => {
                 this.$message({message: '登录失败：'+error, type: 'error'});
+                console.log(error);
             })
-            this.$root.role = 'admin'
         }
     },
     data() {

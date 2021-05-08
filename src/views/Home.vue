@@ -4,7 +4,8 @@
     <hr />
     <div style="text-align: center">
       <div style="margin: 1rem auto">
-        <el-button size="large" type="success" @click="gotoIntro">查看正在招新的小组</el-button> <el-button size="large" plain>投递简历</el-button>
+        <el-button size="large" type="success" @click="gotoIntro" v-if='$root.role != "guest"'>查看正在招新的小组</el-button>
+        <el-button v-else size="large" plain @click="$router.push('/login')">请先登录</el-button>
       </div>
     </div>
     <h2>关于我们</h2>

@@ -18,17 +18,6 @@ module.exports = {
     // vueLoader: {},
     // 生产环境是否生成 sourceMap 文件
     productionSourceMap: true,
-    // css相关配置
-    css: {
-        // 是否使用css分离插件 ExtractTextPlugin
-        extract: true,
-        // 开启 CSS source maps?
-        sourceMap: false,
-        // css预设器配置项
-        loaderOptions: {},
-        // 启用 CSS modules for all css / pre-processor files.
-        modules: false
-    },
     // use thread-loader for babel & TS in production build
     // enabled by default if the machine has more than 1 cores
     parallel: require('os').cpus().length > 1,
@@ -42,18 +31,18 @@ module.exports = {
     devServer: {
         open: process.platform === 'darwin',
         disableHostCheck: true,
-        host: 'localhost',//如果是真机测试，就使用这个IP
+        //host: 'localhost',//如果是真机测试，就使用这个IP
         port: 8080,
         https: false,
         hotOnly: false,
         // before: app => { }
         proxy: {
             '/api': {
-                target: 'http://ahbcht.com',
+                target: 'http://wgm1yk1.nat.ipyingshe.com/',
                 ws: true,
                 changeOrigin: true,
                 pathRewrite: {
-                  '^/api': 'http://wgm1yk1.nat.ipyingshe.com/v3/',
+                  '^/api': '',
                 }
             }
         }

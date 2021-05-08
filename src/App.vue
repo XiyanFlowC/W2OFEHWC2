@@ -5,9 +5,8 @@
         <el-menu router :default-active="$route.path" mode="horizontal" id="nav">
           <el-menu-item index="/">首页</el-menu-item>
           <el-menu-item index="/intro">小组简介</el-menu-item>
-          <el-menu-item index="/resume">加入小组</el-menu-item>
-          <el-menu-item index='/admin/admin' v-if="$root.role == 'admin' || $root.role=='boss'">管理中心</el-menu-item>
-          <el-menu-item index='/login' v-if='$root.role == null'>登录</el-menu-item>
+          <el-menu-item index='/admin/home' v-if="$root.role.includes('admin') || $root.role.includes('boss')">管理中心</el-menu-item>
+          <el-menu-item index='/login' v-if='$root.role == "guest"'>登录</el-menu-item>
         </el-menu>
       </el-header>
       <el-main>

@@ -3,7 +3,7 @@
       <h2>管理员主页</h2>
       <hr/>
       <h3>待确认的简历</h3>
-      <resume-entry v-for="entry in Entries" :key="entry.id" :submitter="entry.uploader">
+      <resume-entry v-for="entry in entries" :key="entry.id" :submitter="entry.uploader">
       </resume-entry>
   </div>
   <div v-else-if="$root.role=='boss'">

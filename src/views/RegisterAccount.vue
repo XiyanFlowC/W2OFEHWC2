@@ -46,7 +46,7 @@ export default {
                     username: this.form.username,
                     password: this.form.password,
                     phone: this.form.phone,
-                    email: this.form.email
+                    email: this.form.email,
                 }
             }).then(()=>{
                 this.$message({message: '创建成功', type: 'success'});

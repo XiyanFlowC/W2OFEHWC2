@@ -1,5 +1,14 @@
 <template>
   <div>
+      <h2>加入小组</h2>
+      <hr />
+      {{grpname}}
+      <h2>简历提交</h2>
+      <hr />
+      <input type="file" id="resumeupld" />
+      <el-button type="success" @click="upload">提交简历文件</el-button>
+      <h2>或者完成表单</h2>
+      <hr />
       <text-request
         v-for="qdatus in qdata"
         :key="qdatus.id"
@@ -16,6 +25,7 @@ import TextRequest from "../components/TextRequest.vue"
 
 export default {
     mounted() {
+        this.gid = this.$route.query.id;
         //stub
     },
     methods: {
@@ -31,7 +41,9 @@ export default {
             {id: '1', type: "text", question: "年龄", ans: ""},
             {
                 id: '2', type: "text", question: "通知电邮", ans: ""
-            }]
+            }],
+            grpname: '',
+            gid: '',
         }
     },
     components: {TextRequest}

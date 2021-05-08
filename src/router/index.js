@@ -33,7 +33,7 @@ const routes = [
     component: Register
   },
   {
-    path: '/intro/details',
+    path: '/details',
     name: '小组详情',
     component: Details
   },
