@@ -9,10 +9,10 @@
             <el-input v-model="createform.username"></el-input>
           </el-form-item>
           <el-form-item label="密码">
-            <el-input v-model="createform.password"></el-input>
+            <el-input v-model="createform.password" type="password"></el-input>
           </el-form-item>
           <el-form-item label="重复密码">
-            <el-input v-model="createform.rptpswd"></el-input>
+            <el-input v-model="createform.rptpswd" type="password"></el-input>
           </el-form-item>
           <el-form-item label="电话">
             <el-input v-model="createform.phone"></el-input>
